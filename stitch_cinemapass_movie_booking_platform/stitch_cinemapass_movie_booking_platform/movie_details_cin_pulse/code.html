@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#9a8f7e","on-secondary":"#690003","on-tertiary-fixed":"#151c28","primary":"#ffe5b7","surface-container-lowest":"#0c0e16","on-secondary-fixed":"#410001","surface-dim":"#11131b","on-surface-variant":"#d1c5b2","on-primary":"#402d00","on-secondary-container":"#fff1ef","surface-container-high":"#282a32","inverse-surface":"#e1e1ed","outline-variant":"#4e4637","surface-tint":"#edc062","error-container":"#93000a","primary-container":"#f3c667","tertiary-container":"#c5ccdd","on-primary-fixed":"#261a00","surface-container":"#1d1f28","primary-fixed":"#ffdea0","surface-variant":"#33343d","on-secondary-fixed-variant":"#930007","on-error-container":"#ffdad6","on-tertiary-fixed-variant":"#404755","secondary-container":"#e10111","on-primary-fixed-variant":"#5c4300","tertiary-fixed":"#dce2f4","inverse-primary":"#795900","on-surface":"#e1e1ed","background":"#11131b","secondary-fixed":"#ffdad5","on-primary-container":"#6f5100","tertiary":"#e1e8fa","surface-bright":"#373942","primary-fixed-dim":"#edc062","error":"#ffb4ab","on-error":"#690005","on-tertiary-container":"#4f5665","secondary":"#ffb4aa","tertiary-fixed-dim":"#c0c6d7","surface":"#11131b","on-background":"#e1e1ed","inverse-on-surface":"#2e3039","secondary-fixed-dim":"#ffb4aa","on-tertiary":"#2a313e","surface-container-highest":"#33343d","surface-container-low":"#191b23"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"grid-margin-mobile":"1.25rem","space-3xl":"4.5rem","gutter-mobile":"0.75rem","space-md":"1rem","space-lg":"1.5rem","space-2xl":"3rem","seat-gap":"0.375rem","space-2xs":"0.25rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-sm":"0.75rem","space-xs":"0.5rem","grid-margin-desktop":"4rem"},fontFamily:{"headline-lg":["Syne"],"title-md":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"headline-md":["Syne"],"body-sm":["Plus Jakarta Sans"],"display-hero-mobile":["Syne"],"body-md":["Plus Jakarta Sans"],"display-hero":["Syne"],"label-meta":["Plus Jakarta Sans"],"headline-sm":["Syne"],"body-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Syne"]},fontSize:{"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.015em",fontWeight:"700"}],"title-md":["16px",{lineHeight:"24px",fontWeight:"600"}],"label-caps":["11px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"800"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"800"}],"label-meta":["13px",{lineHeight:"16px",fontWeight:"500"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]"><div class="h-20 w-full px-grid-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><img alt="CinéPulse Luxe Cinema Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XPuNEwXzvqaNs115zwtY0r466A5PBeVRIN6s6jw42hQfWuBKLqsrnLGXuko3qmvJmxv_zrFSsTivptKYIr9GpxEIFsroPEbMhIrwLduop-HA-9DQYEdPlWOHVLVUikCWQ2ySwJyZ30Nc_vvUvj3hrLr7AWTKeiqSC__jXxrtwa32fxwqRCd3E391zAg5pA5v9cpaq14zUpoWb7sqfgZdlHNiRfYgo7kIq9wdJK6qmMMtdFgzOluKbCFMk"/><span class="font-headline-sm text-headline-sm tracking-tight text-primary uppercase">CinéPulse</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors shadow-inner"><span class="material-symbols-outlined text-primary-container text-base">location_on</span><span class="font-label-meta text-label-meta">Downtown IMAX • Los Angeles</span><span class="material-symbols-outlined text-sm">expand_more</span></div></div><nav class="hidden lg:flex items-center gap-space-xs bg-surface-container-lowest/90 px-space-xs py-space-2xs rounded-full shadow-inner" data-active-classes="bg-primary-container text-on-primary-container font-title-md"><a class="px-space-md py-space-xs rounded-full font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="home" href="#">Home</a><a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-primary-container text-on-primary-container font-title-md" data-path="movies" href="#">Movies</a><a class="px-space-md py-space-xs rounded-full font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="theaters" href="#">Theaters</a><a class="px-space-md py-space-xs rounded-full font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="booking-queue" href="#">Booking Queue</a><a class="px-space-md py-space-xs rounded-full font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-bookings" href="#">My Bookings</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-full focus-within:bg-surface-container transition-all shadow-inner"><span class="material-symbols-outlined text-on-surface-variant text-lg">search</span><input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline w-44 lg:w-56 focus:ring-0" placeholder="Search films, directors, formats..." type="text"/><kbd class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline font-label-caps text-label-caps">⌘K</kbd></div><button class="relative p-space-xs rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container ring-2 ring-surface-container-lowest"></span></button><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container text-primary-container shadow-[0_0_12px_-2px_rgba(243,198,103,0.3)]"><span class="font-label-caps text-label-caps uppercase">✦ Gold CinePass</span></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_10px_rgba(243,198,103,0.2)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV37_X7WWBxqee3aS4kWe3CBDjDVe7C7poa8252IE1NaZ2orPAmgIuUnUBevQQOG3euVIz3063o_5cmUwy0gttqvubjiIITbx6qCM4zAE5q_4z1Lc-Kd5w4tZ-ifx74LsnMbjxk1gvgD_eVaXnAttYXTYQ6VflSA6Wp1plYY6vcZkVNkl6iLcEnmwhFM1FGSGukmpUOmmS6aM7GK9LRr5CrGPlbzEXU3mxrk9A2nTJSAj0uafAr53k"/></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<section class="relative w-full overflow-hidden -mt-20">
+<div class="absolute inset-0 z-0 pointer-events-none">
+<div class="w-full h-full bg-cover bg-center opacity-30 transform scale-105 filter saturate-150" data-alt="Cinematic wide atmospheric landscape of Arrakis with vast rolling golden sand dunes under a moody twilight twin moon sky. Silhouetted futuristic ornithopters glide across the horizon, subtle atmospheric spice dust glows in warm amber particles, deep obsidian shadows blending with rich gold highlights, fine grain cinematic still from Dune directed by Denis Villeneuve." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZNiLemudWWZ8KVg1c4yIHmaZJFYmnB-4xHnpH1FHJt8p9sqKo-2FFj7n5vKuK2GelA1UxqsUBKgwEKJ-bFaouB0YWfEdN-msKrjcDNLDmbV89gRivtFqM8IBtqB9p9AC7bp0dmNOeMlz-Bs-AbeFe5UWggfjrWZREZNGqvR1YWXZmZziW5lcZPsWvf5dUT7f3PBsZRKeU7BcSAdt1FR8RCSkvV2gUHm6rdVdwa-wwn7ajuSdBN23c')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-surface-container-lowest/90"></div>
+<div class="absolute top-0 left-1/3 w-[600px] h-[500px] bg-primary-container/10 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute -top-32 right-10 w-[450px] h-[450px] bg-primary-fixed-dim/5 rounded-full blur-[120px] pointer-events-none"></div>
+</div>
+<div class="relative z-10 w-full px-grid-margin-mobile md:px-grid-margin-desktop pt-32 pb-space-2xl">
+<div class="flex items-center gap-space-xs text-outline font-label-meta text-label-meta mb-space-lg">
+<a class="hover:text-primary transition-colors" href="#">Movies</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Sci-Fi</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface">Dune: Part Three - The Prophet</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="group relative rounded-xl overflow-hidden shadow-2xl bg-surface-container-lowest transition-transform duration-500 hover:-translate-y-1">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-white/5 z-10 pointer-events-none"></div>
+<img class="w-full aspect-[2/3] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Official theatrical poster for Dune Part Three The Prophet. Striking vertical portrait composition featuring Paul Atreides clad in black stillsuit with brilliant spice-blue glowing eyes, looking fiercely ahead amid swirling Arrakis dust storms. Behind him, silhouette of Chani and Emperor throne chambers in golden glow, high editorial prestige cinema poster with sharp cinematic lighting and luxurious bronze typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1GneZO2C7KLo7_4CQDoeeWHwXybcYVOBc0K-2rgGHECGz6jINLCjEoYEq9Y05gkh_eFZBIdSdolJG-BveklFyXO8M0bBYH97lqOld9AgoJUB8sdnYykquFMrVmHBIyu84XEvuoD5l1KLV0sQErOHMp0SnmN77xk13ViQelGQqS60E7Oh3bGPpjFPGBXke_FYleC2qlXDukQkcjQNtrrauKIBuM59RpsO6gcr5cito5ZGHLjfNHlaj"/>
+<div class="absolute top-space-sm left-space-sm z-20 flex flex-col gap-space-2xs items-start">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md font-label-caps text-label-caps text-primary shadow-lg">
+                IMAX EXCLUSIVE
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md font-label-caps text-label-caps text-on-surface-variant">
+                DOLBY ATMOS
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm z-20">
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container shadow-md">
+<span class="material-symbols-outlined text-sm">local_fire_department</span>
+<span class="font-label-caps text-label-caps">98% FRESH</span>
+</div>
+</div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm z-20 flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-surface-dim/80 backdrop-blur font-label-caps text-label-caps text-primary tracking-wider uppercase">
+                4K LASER 1.43:1
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high/90 text-on-surface font-label-meta text-label-meta">
+                Hall 1 Premium
+              </span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<button class="w-full py-space-sm px-space-md rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-title-md text-title-md flex items-center justify-center gap-space-xs transition-all shadow-md group">
+<span class="material-symbols-outlined text-primary-container transition-transform group-hover:scale-110">play_circle</span>
+<span>Watch Official Trailer</span>
+<span class="text-outline font-body-sm text-body-sm">(2:45)</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-space-xs px-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-title-md text-title-md flex items-center justify-center gap-space-2xs transition-colors">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+<span>Watchlist</span>
+</button>
+<button class="py-space-xs px-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-title-md text-title-md flex items-center justify-center gap-space-2xs transition-colors">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share</span>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col justify-between gap-space-xl">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-low text-primary-container">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">In Theaters Now • Daily Screenings</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+                DIRECTOR'S CUT CERTIFIED
+              </span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight leading-none">
+                Dune: Part Three
+              </h1>
+<p class="font-headline-md text-headline-md text-primary tracking-wide">
+                The Prophet
+              </p>
+</div>
+<div class="flex flex-wrap items-center gap-y-space-2xs gap-x-space-md text-on-surface-variant font-body-md text-body-md">
+<span class="text-on-surface font-title-md text-title-md">2025</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-caps text-label-caps text-on-surface">PG-13</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-outline">schedule</span>
+                2 hr 55 min
+              </span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span>Sci-Fi • Adventure • Drama</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="text-primary-container">English / Fremen (Subtitled)</span>
+</div>
+<div class="grid grid-cols-3 gap-space-sm max-w-lg mt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 shadow-inner">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase">IMDb Score</span>
+<span class="material-symbols-outlined text-primary-container text-sm">star</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">9.4</span>
+<span class="font-body-sm text-body-sm text-outline">/10</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline truncate">148k audience votes</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 shadow-inner">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase">Rotten Tomatoes</span>
+<span class="material-symbols-outlined text-secondary-container text-sm">thumb_up</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">98%</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline truncate">Universal Acclaim</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 shadow-inner">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase">Metacritic</span>
+<span class="material-symbols-outlined text-primary text-sm">workspace_premium</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">88</span>
+<span class="font-body-sm text-body-sm text-outline">/100</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline truncate">Must-See Critic Badge</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Synopsis</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                As the holy war spreads across the cosmos, Paul Atreides must confront the heavy burden of messianic prophecy and an unprecedented galactic alliance threatening the future of Arrakis and humanity itself.
+              </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pt-space-xs max-w-3xl">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Direction &amp; Screenplay</span>
+<span class="font-title-md text-title-md text-on-surface">Denis Villeneuve</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Based on Dune Messiah by Frank Herbert</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Cast Ensemble</span>
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm">Timothée Chalamet</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm">Zendaya</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm">Florence Pugh</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm">Javier Bardem</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest/80 backdrop-blur-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">sound_detection_loud_sound</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Hans Zimmer Original Score</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mixed natively for CinéPulse 12.1 Omnidirectional Array</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-primary-container font-label-caps text-label-caps uppercase tracking-wider">
+<span>Auditorium Acoustic Pass</span>
+<span class="material-symbols-outlined text-sm">verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full px-grid-margin-mobile md:px-grid-margin-desktop py-space-xl bg-surface-dim relative">
+<div class="flex flex-col gap-space-2xl max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">Live Box Office</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+            Reserve Your Experience
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Choose your preferred date, sensory auditorium tier, and confirmed showtime below.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-full self-start md:self-auto">
+<span class="material-symbols-outlined text-primary-container text-sm">info</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dynamic Seat Reservation Lock active for 8 minutes upon selection</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline flex items-center gap-2">
+<span>Step 01</span>
+<span class="w-4 h-[1px] bg-outline-variant"></span>
+<span class="text-on-surface">Select Date</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">Showing showtimes in Pacific Time (PT)</span>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-2 scrollbar-none" id="date-selector">
+<button class="date-pill flex flex-col items-center justify-center min-w-[105px] py-space-sm px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Today</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Oct 24</span>
+<span class="font-body-sm text-body-sm text-outline">6 Shows</span>
+</button>
+<button class="date-pill active flex flex-col items-center justify-center min-w-[105px] py-space-sm px-space-md rounded-xl bg-primary-container text-on-primary-container transition-all shadow-[0_0_20px_-3px_rgba(243,198,103,0.5)]">
+<span class="font-label-caps text-label-caps uppercase font-bold">Friday</span>
+<span class="font-headline-sm text-headline-sm font-bold mt-0.5">Oct 25</span>
+<span class="font-label-caps text-label-caps">Selected</span>
+</button>
+<button class="date-pill flex flex-col items-center justify-center min-w-[105px] py-space-sm px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Saturday</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Oct 26</span>
+<span class="font-body-sm text-body-sm text-outline">12 Shows</span>
+</button>
+<button class="date-pill flex flex-col items-center justify-center min-w-[105px] py-space-sm px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Sunday</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Oct 27</span>
+<span class="font-body-sm text-body-sm text-outline">10 Shows</span>
+</button>
+<button class="date-pill flex flex-col items-center justify-center min-w-[105px] py-space-sm px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Monday</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Oct 28</span>
+<span class="font-body-sm text-body-sm text-outline">7 Shows</span>
+</button>
+<button class="date-pill flex flex-col items-center justify-center min-w-[105px] py-space-sm px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Tuesday</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Oct 29</span>
+<span class="font-body-sm text-body-sm text-outline">7 Shows</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline flex items-center gap-2">
+<span>Step 02 &amp; 03</span>
+<span class="w-4 h-[1px] bg-outline-variant"></span>
+<span class="text-on-surface">Choose Theater Experience &amp; Showtime</span>
+</span>
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1.5 font-label-meta text-label-meta text-outline">
+<span class="w-2 h-2 rounded-full bg-surface-container-highest"></span> Available
+            </span>
+<span class="flex items-center gap-1.5 font-label-meta text-label-meta text-primary-container">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Selected
+            </span>
+<span class="flex items-center gap-1.5 font-label-meta text-label-meta text-error">
+<span class="w-2 h-2 rounded-full bg-error"></span> Filling Fast
+            </span>
+</div>
+</div>
+<div class="flex flex-col gap-space-lg">
+<div class="experience-card active rounded-2xl p-space-lg bg-surface-container-low shadow-[0_0_28px_-6px_rgba(243,198,103,0.25)] transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 shadow-lg">
+<span class="material-symbols-outlined text-2xl">camera_outdoor</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Auditorium 1 — IMAX with Laser &amp; 12-Channel Audio</h3>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-caps text-label-caps uppercase">Flagship</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Dual 4K Commercial Laser Projection • 70-Foot Screen • 1.43:1 Aspect Ratio Full Immersion</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-outline">Curated Experience by CinéPulse Master Projectionist</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">12:30 PM</span>
+<span class="font-label-caps text-label-caps text-error bg-error/10 px-1.5 py-0.5 rounded">Filling Fast</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>IMAX GT Laser</span>
+<span class="text-error font-medium">18 seats left</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$24.50</span>
+</div>
+<div class="time-chip selected cursor-pointer rounded-xl p-space-sm bg-primary-container text-on-primary-container shadow-[0_0_18px_rgba(243,198,103,0.5)] transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold">03:45 PM</span>
+<span class="font-label-caps text-label-caps bg-on-primary-container text-primary-container px-1.5 py-0.5 rounded font-bold">Selected</span>
+</div>
+<div class="flex items-center justify-between font-label-meta text-label-meta mt-1 opacity-90">
+<span>IMAX GT Laser</span>
+<span>42 seats left</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-extrabold mt-0.5">$24.50</span>
+</div>
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">07:15 PM</span>
+<span class="font-label-caps text-label-caps text-error bg-error-container text-on-error-container px-1.5 py-0.5 rounded font-bold">Almost Full</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>Prime Time Evening</span>
+<span class="text-error font-semibold">4 seats left</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$28.00</span>
+</div>
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">10:30 PM</span>
+<span class="font-label-caps text-label-caps text-primary bg-surface-dim px-1.5 py-0.5 rounded">Late Night</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>IMAX GT Laser</span>
+<span class="text-on-surface-variant">Available</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$22.50</span>
+</div>
+</div>
+</div>
+<div class="experience-card rounded-2xl p-space-lg bg-surface-container-low/60 hover:bg-surface-container-low transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">surround_sound</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Auditorium 4 — Dolby Cinema at AMC</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase">Ultra Contrast</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Dolby Vision Dual 4K Laser HDR • Dolby Atmos Spatial Audio • Premium Power Recliners with Subwoofer Transducers</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-outline">1,000,000:1 Contrast Ratio</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">01:15 PM</span>
+<span class="font-label-caps text-label-caps text-primary bg-surface-dim px-1.5 py-0.5 rounded">Matinee</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>Dolby Vision + Atmos</span>
+<span class="text-on-surface-variant">24 seats left</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$23.00</span>
+</div>
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">05:00 PM</span>
+<span class="font-label-caps text-label-caps text-error bg-error/10 px-1.5 py-0.5 rounded">Filling Fast</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>Dolby Vision + Atmos</span>
+<span class="text-error font-medium">11 seats left</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$25.00</span>
+</div>
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">08:45 PM</span>
+<span class="font-label-caps text-label-caps text-primary bg-surface-dim px-1.5 py-0.5 rounded">Prime Night</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>Dolby Vision + Atmos</span>
+<span class="text-on-surface-variant">36 seats left</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$25.00</span>
+</div>
+</div>
+</div>
+<div class="experience-card rounded-2xl p-space-lg bg-surface-container-low/60 hover:bg-surface-container-low transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">wine_bar</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Auditorium 7 — CinéPulse Prime VIP Dine-In</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps uppercase">Full Concierge</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Private Chef Service • Full Seat Recline with Heated Blankets • Sommelier Wine List &amp; Silent Service Call Button</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-outline">Ages 21+ • Reserved Pair Pods</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">04:30 PM</span>
+<span class="font-label-caps text-label-caps text-primary bg-surface-dim px-1.5 py-0.5 rounded">Chef Dinner Pairing</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>VIP Dine-In Suite</span>
+<span class="text-on-surface-variant">8 pods left</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$36.00</span>
+</div>
+<div class="time-chip cursor-pointer rounded-xl p-space-sm bg-surface-container hover:bg-surface-container-high transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">08:00 PM</span>
+<span class="font-label-caps text-label-caps text-error bg-error/10 px-1.5 py-0.5 rounded">Filling Fast</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-outline mt-1">
+<span>VIP Dine-In Suite</span>
+<span class="text-error font-medium">2 pods left</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface mt-0.5">$36.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-xl">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Hall &amp; Technology Standards</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-space-xs items-start shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl">airline_seat_recline_extra</span>
+<span class="font-title-md text-title-md text-on-surface">Luxury Recliners</span>
+<span class="font-body-sm text-body-sm text-outline">Ergonomic zero-gravity motor controls</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-space-xs items-start shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl">room_service</span>
+<span class="font-title-md text-title-md text-on-surface">In-Seat Service</span>
+<span class="font-body-sm text-body-sm text-outline">Bespoke artisanal menu and craft cocktails</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-space-xs items-start shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl">videocam</span>
+<span class="font-title-md text-title-md text-on-surface">Laser 4K 120fps</span>
+<span class="font-body-sm text-body-sm text-outline">Pure RGB laser light engine brilliance</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-space-xs items-start shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl">hdr_on</span>
+<span class="font-title-md text-title-md text-on-surface">Master HDR</span>
+<span class="font-body-sm text-body-sm text-outline">Expanded color space and deep blacks</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-space-xs items-start shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl">accessible_forward</span>
+<span class="font-title-md text-title-md text-on-surface">Universal ADA</span>
+<span class="font-body-sm text-body-sm text-outline">Wheelchair companion &amp; inductive loops</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="sticky bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.7)]">
+<div class="w-full px-grid-margin-mobile md:px-grid-margin-desktop py-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md w-full sm:w-auto">
+<div class="w-12 h-16 rounded overflow-hidden shrink-0 hidden md:block">
+<img class="w-full h-full object-cover" data-alt="Mini thumbnail of Dune Part Three theatrical poster highlighting Paul Atreides face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkoTYWi_Ds3z-KA1dlPM6X49IYSugRqaePcN8MgtbWQ9mckaMZhaeIZHbULdYZdxsaovk_G1vIxzPOrLYQII5TLyQFTlnz6PL7ysv4s9kJyFJyHx8J5Bpdm_tvsej8ZQER5vHnbdYSEWHrvwiP-YhihvrVhTFhCKG_jAxv0OlzYEVQU19QRkSBrVANjlejU8qkx07r7kdftC5uNXJlrxf-EP9yJiURAbBaQg6n41Vv20t6SRa4DG1I"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface font-bold">Dune: Part Three</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps font-bold">IMAX</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-primary font-semibold" id="summary-selection">Fri, Oct 25 • 03:45 PM</span>
+<span>•</span>
+<span>Auditorium 1 (Screen 70ft)</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">$24.50 / seat</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-end">
+<div class="hidden lg:flex flex-col items-end">
+<span class="font-label-caps text-label-caps uppercase text-outline">Selected Session</span>
+<span class="font-title-md text-title-md text-primary-container">Reserved Seating Available</span>
+</div>
+<button class="w-full sm:w-auto px-space-xl py-space-md rounded-xl bg-gradient-to-r from-primary-container to-primary-fixed-dim hover:from-primary hover:to-primary-container text-on-primary font-title-md text-title-md font-bold tracking-wide shadow-[0_0_24px_-4px_rgba(243,198,103,0.6)] flex items-center justify-center gap-space-sm transition-all hover:scale-[1.02] active:scale-[0.98]">
+<span>Proceed to Seat Selection</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateButtons = document.querySelectorAll('.date-pill');
+      const timeChips = document.querySelectorAll('.time-chip');
+      const summaryText = document.getElementById('summary-selection');
+
+      let currentDate = 'Fri, Oct 25';
+      let currentTime = '03:45 PM';
+
+      dateButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          dateButtons.forEach(b => {
+            b.classList.remove('active', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_20px_-3px_rgba(243,198,103,0.5)]');
+            b.classList.add('bg-surface-container', 'text-on-surface-variant');
+            const sub = b.querySelector('.font-label-caps:last-child');
+            if(sub && sub.innerText === 'Selected') {
+              sub.innerText = '7 Shows';
+            }
+          });
+
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          btn.classList.add('active', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_20px_-3px_rgba(243,198,103,0.5)]');
+          
+          const dayName = btn.querySelector('.font-label-caps:first-child').innerText;
+          const dayNum = btn.querySelector('.font-headline-sm').innerText;
+          currentDate = `${dayName.slice(0, 3)}, ${dayNum}`;
+          updateSummary();
+        });
+      });
+
+      timeChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          timeChips.forEach(c => {
+            c.classList.remove('selected', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_18px_rgba(243,198,103,0.5)]');
+            c.classList.add('bg-surface-container');
+            const timeSpan = c.querySelector('.font-headline-sm');
+            if(timeSpan) timeSpan.classList.add('text-on-surface');
+          });
+
+          chip.classList.remove('bg-surface-container');
+          chip.classList.add('selected', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_18px_rgba(243,198,103,0.5)]');
+          const chipTime = chip.querySelector('.font-headline-sm');
+          if(chipTime) {
+            chipTime.classList.remove('text-on-surface');
+            currentTime = chipTime.innerText.trim();
+          }
+          updateSummary();
+        });
+      });
+
+      function updateSummary() {
+        if(summaryText) {
+          summaryText.textContent = `${currentDate} • ${currentTime}`;
+        }
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant mt-space-3xl"><div class="w-full px-grid-margin-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="CinéPulse Luxe Cinema Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XPuNEwXzvqaNs115zwtY0r466A5PBeVRIN6s6jw42hQfWuBKLqsrnLGXuko3qmvJmxv_zrFSsTivptKYIr9GpxEIFsroPEbMhIrwLduop-HA-9DQYEdPlWOHVLVUikCWQ2ySwJyZ30Nc_vvUvj3hrLr7AWTKeiqSC__jXxrtwa32fxwqRCd3E391zAg5pA5v9cpaq14zUpoWb7sqfgZdlHNiRfYgo7kIq9wdJK6qmMMtdFgzOluKbCFMk"/><span class="font-headline-sm text-headline-sm text-primary uppercase">CinéPulse</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Elevating cinematic immersion through pristine acoustic engineering, master-crafted laser projection, and curated private lounge hospitality. Every seat is an uncompromised vantage point.</p><div class="flex items-center gap-space-sm pt-space-xs"><span class="px-space-sm py-space-2xs rounded bg-surface-container font-label-caps text-label-caps text-primary">IMAX GT LASER</span><span class="px-space-sm py-space-2xs rounded bg-surface-container font-label-caps text-label-caps text-primary">DOLBY CINEMA</span><span class="px-space-sm py-space-2xs rounded bg-surface-container font-label-caps text-label-caps text-primary">4DX IMMERSIVE</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Signature Experiences</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">IMAX with Laser 1.43:1</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dolby Atmos Sound Suites</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">4DX Dynamic Motion</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Director's Lounge Bar</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Private Screening Salons</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">VIP &amp; Concierge</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">CinePass Privilege Tiers</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dedicated In-Seat Valet</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Private Sommelier Pairing</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Direct Line: +1 (800) 840-PULSE</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">concierge@cinepulseluxe.com</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Policies &amp; Guest Care</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Exchange &amp; Cancellation Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Auditorium Etiquette Charter</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sensory &amp; ADA Accessibility</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Age Admissions &amp; Ratings</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Reservation</a></div></div><div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md text-outline font-body-sm text-body-sm"><p>© 2025 CinéPulse Luxe Cinemas International LLC. All auditorium rights reserved.</p><div class="flex items-center gap-space-lg"><a class="hover:text-on-surface transition-colors" href="#">Privacy Framework</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Cinema</a><a class="hover:text-on-surface transition-colors" href="#">Security &amp; Trust</a></div></div></div></footer></body></html>
