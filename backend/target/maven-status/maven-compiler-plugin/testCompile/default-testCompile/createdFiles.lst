@@ -1,2 +1,3 @@
 com\cinepulse\controller\HealthControllerTest.class
+com\cinepulse\service\BookingServiceTest.class
 com\cinepulse\MovieTicketBookingApplicationTests.class

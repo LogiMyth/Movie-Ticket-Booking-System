@@ -74,5 +74,8 @@ public class Booking {
     public void addBookingSeat(BookingSeat bookingSeat) {
         bookingSeats.add(bookingSeat);
         bookingSeat.setBooking(this);
+        if (this.show != null) {
+            bookingSeat.setShow(this.show);
+        }
     }
 }

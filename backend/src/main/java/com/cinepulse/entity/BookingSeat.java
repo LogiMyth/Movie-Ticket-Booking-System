@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "booking_seats", uniqueConstraints = {
-    @UniqueConstraint(name = "uk_booking_seat_unique", columnNames = {"booking_id", "seat_id"})
+    @UniqueConstraint(name = "uk_show_seat_unique", columnNames = {"show_id", "seat_id"})
 })
 public class BookingSeat {
 
@@ -18,6 +18,10 @@ public class BookingSeat {
     private Booking booking;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "show_id", nullable = false)
+    private Show show;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seat_id", nullable = false)
     private Seat seat;
 
@@ -26,8 +30,9 @@ public class BookingSeat {
 
     public BookingSeat() {}
 
-    public BookingSeat(Booking booking, Seat seat, BigDecimal price) {
+    public BookingSeat(Booking booking, Show show, Seat seat, BigDecimal price) {
         this.booking = booking;
+        this.show = show;
         this.seat = seat;
         this.price = price;
     }
@@ -37,6 +42,9 @@ public class BookingSeat {
 
     public Booking getBooking() { return booking; }
     public void setBooking(Booking booking) { this.booking = booking; }
+
+    public Show getShow() { return show; }
+    public void setShow(Show show) { this.show = show; }
 
     public Seat getSeat() { return seat; }
     public void setSeat(Seat seat) { this.seat = seat; }

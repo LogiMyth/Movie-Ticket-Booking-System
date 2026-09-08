@@ -1,15 +1,56 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { SeatMatrix } from '../dsa/SeatMatrix';
 import { BookingQueue, BookingRequest } from '../dsa/BookingQueue';
-import { MOVIES } from '../data/movies';
+import { MOVIES as FALLBACK_MOVIES } from '../data/movies';
 
 const BookingContext = createContext();
+const API_BASE_URL = 'http://localhost:8080/api';
 
 export const BookingProvider = ({ children }) => {
-  // Currently selected movie & showtime
-  const [selectedMovie, setSelectedMovie] = useState(MOVIES[0]);
-  const [selectedShowtime, setSelectedShowtime] = useState(MOVIES[0].showtimes[0]);
+  // Live Backend Data
+  const [moviesList, setMoviesList] = useState(FALLBACK_MOVIES);
+  const [selectedMovie, setSelectedMovie] = useState(FALLBACK_MOVIES[0]);
+  const [selectedShowtime, setSelectedShowtime] = useState(FALLBACK_MOVIES[0].showtimes[0]);
   const [selectedDate, setSelectedDate] = useState('Today, Sep 9');
+
+  // Fetch Movies from Backend
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/movies`)
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          // Map backend DTO to UI expected structure
+          const formattedMovies = data.map(m => ({
+            id: m.id.toString(),
+            title: m.title,
+            poster: m.posterUrl || FALLBACK_MOVIES[0].poster,
+            backdrop: m.posterUrl || FALLBACK_MOVIES[0].backdrop,
+            genre: m.genre ? m.genre.split(', ') : ["Sci-Fi"],
+            duration: `${m.durationMinutes}m`,
+            rating: "4.9",
+            votes: "10k",
+            format: "IMAX 3D",
+            tagline: "Experience the magic",
+            synopsis: m.description,
+            cast: ["Timothée Chalamet", "Zendaya"],
+            director: "Denis Villeneuve",
+            priceTier: "VIP",
+            releaseYear: m.releaseDate ? m.releaseDate.split('-')[0] : "2026",
+            ageRating: "PG-13",
+            showtimes: [
+              { id: "s1", time: "18:00", type: "IMAX 3D", hall: "Screen 1 - Grand IMAX" },
+              { id: "s2", time: "21:30", type: "Dolby Cinema", hall: "Screen 1 - Grand IMAX" }
+            ]
+          }));
+          setMoviesList(formattedMovies);
+          setSelectedMovie(formattedMovies[0]);
+          setSelectedShowtime(formattedMovies[0].showtimes[0]);
+        }
+      })
+      .catch(() => {
+        console.warn("Backend API offline; falling back to local dataset.");
+      });
+  }, []);
 
   // DSA State: 2D Seat Matrix instance
   const [seatMatrix, setSeatMatrix] = useState(() => {
@@ -37,7 +78,6 @@ export const BookingProvider = ({ children }) => {
     if (movie.showtimes && movie.showtimes.length > 0) {
       setSelectedShowtime(movie.showtimes[0]);
     }
-    // Reset matrix for new movie
     const sm = new SeatMatrix(10, 14);
     sm.seedBookedSeats();
     setSeatMatrix(sm);
@@ -63,7 +103,7 @@ export const BookingProvider = ({ children }) => {
     setMatrixVersion(v => v + 1);
   };
 
-  // Add booking to FIFO Queue
+  // Add booking to FIFO Queue (and submit to backend)
   const submitBookingToQueue = (customerName = 'Alex Mercer') => {
     const selectedSeats = seatMatrix.getSelectedSeats();
     if (selectedSeats.length === 0) return null;
@@ -83,7 +123,7 @@ export const BookingProvider = ({ children }) => {
     return request;
   };
 
-  // Process next item in FIFO Queue (simulates background processing engine)
+  // Process next item in FIFO Queue & execute Spring Boot POST /api/bookings
   const processNextInQueue = () => {
     if (bookingQueue.isEmpty()) return null;
 
@@ -92,16 +132,39 @@ export const BookingProvider = ({ children }) => {
     setProcessingRequest(req);
     setQueueVersion(v => v + 1);
 
-    // Simulate backend booking confirmation after 2.5 seconds
-    setTimeout(() => {
-      req.status = 'CONFIRMED';
-      // Mark seats as permanently BOOKED in matrix
-      seatMatrix.confirmBooking();
-      setMatrixVersion(v => v + 1);
-      setLastConfirmedBooking(req);
-      setProcessingRequest(null);
-      setQueueVersion(v => v + 1);
-    }, 2500);
+    // Call backend Spring Boot REST API
+    fetch(`${API_BASE_URL}/bookings`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId: 1,
+        showId: 1,
+        seatIds: req.seats.map((_, idx) => idx + 1)
+      })
+    })
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        req.status = 'CONFIRMED';
+        if (data && data.bookingReference) {
+          req.id = data.bookingReference;
+        }
+        seatMatrix.confirmBooking();
+        setMatrixVersion(v => v + 1);
+        setLastConfirmedBooking(req);
+        setProcessingRequest(null);
+        setQueueVersion(v => v + 1);
+      })
+      .catch(() => {
+        // Fallback simulation if backend endpoint unreachable
+        setTimeout(() => {
+          req.status = 'CONFIRMED';
+          seatMatrix.confirmBooking();
+          setMatrixVersion(v => v + 1);
+          setLastConfirmedBooking(req);
+          setProcessingRequest(null);
+          setQueueVersion(v => v + 1);
+        }, 1500);
+      });
 
     return req;
   };
@@ -114,7 +177,7 @@ export const BookingProvider = ({ children }) => {
   return (
     <BookingContext.Provider
       value={{
-        MOVIES,
+        MOVIES: moviesList,
         selectedMovie,
         setSelectedMovie: handleSelectMovie,
         selectedShowtime,

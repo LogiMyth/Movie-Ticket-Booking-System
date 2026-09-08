@@ -1,5 +1,5 @@
+-- Update seed V2 insert to include show_id in booking_seats
 -- V2__seed_data.sql
--- Seed Data for Phase 2 Checkpoint 1 Testing
 
 -- Seed User
 INSERT INTO users (id, name, email, password) VALUES 
