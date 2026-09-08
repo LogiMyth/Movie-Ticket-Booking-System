@@ -4,7 +4,7 @@
 -- 1. Inner Join: Retrieve full showtime schedule with Movie, Theater, and Screen details
 SELECT 
     m.title AS movie_title,
-    m.format AS movie_format,
+    m.genre AS movie_genre,
     t.name AS theater_name,
     s.name AS screen_name,
     sh.show_date,

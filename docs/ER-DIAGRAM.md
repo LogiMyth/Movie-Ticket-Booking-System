@@ -15,6 +15,7 @@ erDiagram
     SCREENS ||--o{ SEATS : "has physical (1:N)"
     SCREENS ||--o{ SHOWS : "hosts (1:N)"
     SHOWS ||--o{ BOOKINGS : "booked for (1:N)"
+    SHOWS ||--o{ BOOKING_SEATS : "scope (1:N)"
     BOOKINGS ||--|{ BOOKING_SEATS : "includes (1:N)"
     SEATS ||--o{ BOOKING_SEATS : "reserved in (1:N)"
 
@@ -81,6 +82,7 @@ erDiagram
     BOOKING_SEATS {
         bigint id PK
         bigint booking_id FK
+        bigint show_id FK
         bigint seat_id FK
         decimal price
     }
@@ -99,6 +101,6 @@ erDiagram
 | `seats` | `id` | `screen_id` | Physical seat template per screen |
 | `shows` | `id` | `movie_id`, `screen_id` | Links Movie + Screen + Showtime |
 | `bookings` | `id` | `user_id`, `show_id` | $1:N$ to `booking_seats` |
-| `booking_seats` | `id` | `booking_id`, `seat_id` | Junction table for $M:N$ Booking-Seat relationship per Show |
+| `booking_seats` | `id` | `booking_id`, `show_id`, `seat_id` | Junction table enforcing show-specific unique seat reservation |
 
-> **Key Design Guarantee**: Physical seats belong to a `screen`. Availability depends on the `show`. Unique constraint `uk_booking_seat_unique` on `(booking_id, seat_id)` prevents double-booking.
+> **Key Design Guarantee**: Physical seats belong to a `screen`. Availability depends on the `show`. Unique constraint `uk_show_seat_unique` on `(show_id, seat_id)` prevents double-booking across any booking for the same show.
