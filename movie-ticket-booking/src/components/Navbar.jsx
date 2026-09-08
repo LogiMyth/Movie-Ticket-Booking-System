@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
 
 export const Navbar = () => {
   const location = useLocation();
-  const { bookingQueue, queueVersion } = useBooking();
+  const { bookingQueue } = useBooking();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const queueCount = bookingQueue.size();

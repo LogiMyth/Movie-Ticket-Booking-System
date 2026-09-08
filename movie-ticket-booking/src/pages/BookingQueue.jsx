@@ -1,4 +1,4 @@
-import React from 'react';
+// BookingQueue page component
 import { useNavigate } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
 
@@ -6,11 +6,9 @@ export const BookingQueue = () => {
   const navigate = useNavigate();
   const {
     bookingQueue,
-    queueVersion,
     processNextInQueue,
     processingRequest,
-    lastConfirmedBooking,
-    selectedMovie
+    lastConfirmedBooking
   } = useBooking();
 
   const queueItems = bookingQueue.toArray();

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { SeatMatrix } from '../dsa/SeatMatrix';
 import { BookingQueue, BookingRequest } from '../dsa/BookingQueue';
 import { MOVIES } from '../data/movies';
@@ -22,7 +22,7 @@ export const BookingProvider = ({ children }) => {
   const [matrixVersion, setMatrixVersion] = useState(0);
 
   // DSA State: Linked-List FIFO Queue
-  const [bookingQueue, setBookingQueue] = useState(() => new BookingQueue());
+  const [bookingQueue] = useState(() => new BookingQueue());
   const [queueVersion, setQueueVersion] = useState(0);
 
   // Currently processing request in Queue

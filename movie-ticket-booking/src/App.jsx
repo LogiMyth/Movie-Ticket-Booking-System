@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { BookingProvider } from './context/BookingContext';
 import { Navbar } from './components/Navbar';

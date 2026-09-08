@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useBooking } from '../context/BookingContext';
 import { ROW_LABELS, SeatMatrix } from '../dsa/SeatMatrix';
+
 
 export const SeatSelection = () => {
   const {
@@ -7,7 +10,6 @@ export const SeatSelection = () => {
     selectedShowtime,
     selectedDate,
     seatMatrix,
-    matrixVersion,
     handleToggleSeat,
     handleAutoSelectSeats,
     handleClearSelection,

@@ -1,4 +1,4 @@
-import React from 'react';
+// BookingConfirmation component
 import { Link } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
 

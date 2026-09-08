@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useBooking } from '../context/BookingContext';
 import { MovieCard } from '../components/MovieCard';
 
