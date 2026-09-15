@@ -1,16 +1,17 @@
 # DECISIONS.md — Architectural & Technical Decisions Log
 
-## Decision 1: Backend Directory Structure
-- **Choice**: Separated into `backend/` at root level.
-- **Rationale**: Keeps React/Vite frontend (`movie-ticket-booking/`) completely independent while establishing clean Spring Boot Maven structure.
+## Decision 1: Complete Backend Migration to Python FastAPI
+- **Choice**: Replaced Java/Spring Boot backend with Python 3.11+ / FastAPI / SQLAlchemy 2.x / Alembic in `backend/`.
+- **Rationale**: Meets project migration requirement while maintaining zero UI/UX changes on the React frontend.
 
-## Decision 2: Flyway Database Migrations
-- **Choice**: Enabled Flyway migrations in `src/main/resources/db/migration/`.
-- **Rationale**: Provides deterministic database schema creation (`V1__initial_schema.sql`), testing seed data (`V2__seed_data.sql`), and schema adjustments (`V3__booking_seat_show_constraint.sql`).
+## Decision 2: Alembic Database Migrations
+- **Choice**: Implemented Alembic migrations (`alembic/versions/001_initial_schema_and_seed.py`).
+- **Rationale**: Replaces Flyway migration scripts with Python-native Alembic migration management for MySQL schema creation and seed data insertion.
 
 ## Decision 3: Show-Specific Composite Unique Constraint on Seats
-- **Choice**: Added `show_id` to `booking_seats` and applied composite constraint `uk_show_seat_unique UNIQUE(show_id, seat_id)`.
-- **Rationale**: A constraint on `(booking_id, seat_id)` allowed duplicate bookings of the same seat across different bookings for the same show. The composite `(show_id, seat_id)` constraint guarantees double-booking prevention at the database level while allowing the same physical seat to be booked for different shows.
+- **Choice**: Maintained `show_id` on `booking_seats` and enforced composite constraint `UNIQUE(show_id, seat_id)`.
+- **Rationale**: Prevents double booking of the same seat for the same show at the database level while allowing the same physical seat to be reserved for different shows.
 
-## Decision 4: Architecture Responsibility Separation
-- **Choice**: Frontend React `SeatMatrix` (2D Array) and `BookingQueue` (Linked List) handle interactive UI and college DSA demonstration. Backend Spring Boot `@Transactional` Booking Service and MySQL DB act as the authoritative source of truth for seat reservation and data persistence.
+## Decision 4: Pydantic v2 CamelCase Schema Serialization
+- **Choice**: Configured Pydantic schemas with `alias_generator=to_camel` and `serialize_by_alias=True`.
+- **Rationale**: Preserves 100% exact REST API response contracts expected by the React frontend (e.g. `durationMinutes`, `movieTitle`, `rowLabel`, `totalAmount`) without requiring frontend DTO parsing modifications.

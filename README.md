@@ -1,6 +1,6 @@
-# Movie Ticket Booking System (CinéPulse)
+# CinéPulse – Movie Ticket Booking System
 
-A college project demonstrating **Data Structures & Algorithms (2D Array & Linked-List FIFO Queue)** alongside a full-stack **Spring Boot + React + MySQL** architecture.
+A college project demonstrating **Data Structures & Algorithms (2D Array & Linked-List FIFO Queue)** alongside a full-stack **React + Python (FastAPI) + SQLAlchemy + MySQL** architecture.
 
 ---
 
@@ -10,7 +10,8 @@ A college project demonstrating **Data Structures & Algorithms (2D Array & Linke
 - **2D Seat Matrix Allocation Engine**: Interactive $10 \times 14$ seat matrix with aisle gaps, seat tier pricing (Standard, Premium, VIP), and auto-selection of $N$ adjoining seats via a sliding window algorithm.
 - **FIFO Booking Queue Visualizer**: Linked-list FIFO queue processing booking requests in strict order of submission.
 - **Show-Specific Seat Availability**: Database-backed availability calculated per showtime.
-- **Transactional Booking & Double-Booking Protection**: Atomic `@Transactional` backend execution with composite `UNIQUE (show_id, seat_id)` database constraints preventing double bookings.
+- **Transactional Booking & Double-Booking Protection**: Atomic FastAPI backend execution with composite `UNIQUE (show_id, seat_id)` database constraints preventing double bookings.
+- **REST API & Data Persistence**: Complete FastAPI REST backend with SQLAlchemy 2.x ORM, Alembic migrations, and Pydantic validation.
 
 ---
 
@@ -22,10 +23,15 @@ A college project demonstrating **Data Structures & Algorithms (2D Array & Linke
 - **Routing**: React Router DOM v7
 
 ### Backend
-- **Framework**: Java 21/25 + Spring Boot 3.4.3
-- **Data Access**: Spring Data JPA + Hibernate
-- **Database**: MySQL 8.0+ / H2 In-Memory (for testing)
-- **Migrations**: Flyway Migration
+- **Framework**: Python 3.11+ / FastAPI
+- **ASGI Server**: Uvicorn
+- **ORM & Migrations**: SQLAlchemy 2.x & Alembic
+- **Driver**: PyMySQL
+- **Validation**: Pydantic v2
+- **Testing**: pytest & httpx
+
+### Database
+- **Database**: MySQL 8.0+
 
 ### Data Structures & Algorithms (DSA)
 - **2D Array / Matrix**: Cinema seat map state tracking & $O(R \times C)$ sliding window consecutive seat search algorithm.
@@ -38,7 +44,19 @@ A college project demonstrating **Data Structures & Algorithms (2D Array & Linke
 ```text
 Movie Ticket Booking System/
 ├── movie-ticket-booking/       # React 19 Frontend (Vite + Tailwind CSS v4)
-├── backend/                    # Spring Boot 3.4.3 Maven Backend
+├── backend/                    # Python FastAPI Backend (SQLAlchemy + Alembic)
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── database.py
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── routers/
+│   │   └── services/
+│   ├── alembic/
+│   ├── alembic.ini
+│   ├── requirements.txt
+│   ├── .env.example
+│   └── tests/
 └── docs/                       # Project Documentation & SQL Assignment Files
     ├── API.md                  # REST API Specification
     ├── DSA-Writeup.md          # College DSA Analysis & Algorithm Details
@@ -54,50 +72,91 @@ Movie Ticket Booking System/
 ## 📋 System Requirements
 
 - **Node.js**: v18.0.0 or higher
-- **Java JDK**: JDK 21 or JDK 25
-- **Maven**: Bundled or installed (`mvn` / `mvn.cmd`)
-- **MySQL Server**: v8.0+ (Optional for local testing; tests run automatically on H2)
+- **Python**: 3.11+
+- **MySQL Server**: v8.0+
 
 ---
 
-## 🚀 Running the Frontend
+## ⚙️ Setup Instructions
 
+### 1. Database Setup (MySQL)
+
+Create the MySQL database:
+```sql
+CREATE DATABASE cinepulse;
+```
+
+---
+
+### 2. Backend Setup (FastAPI)
+
+Navigate to the `backend/` directory:
+```bash
+cd backend
+```
+
+Create and activate a virtual environment:
+- **Windows**:
+  ```cmd
+  python -m venv .venv
+  .venv\Scripts\activate
+  ```
+- **Linux/macOS**:
+  ```bash
+  python3 -m venv .venv
+  source .venv/bin/activate
+  ```
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Configure environment variables (create `.env` from `.env.example`):
+```env
+DATABASE_URL=mysql+pymysql://root:password@localhost:3306/cinepulse
+PORT=8000
+HOST=0.0.0.0
+CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+```
+
+Run Alembic database migrations:
+```bash
+alembic upgrade head
+```
+
+Run the backend server:
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+The FastAPI backend REST API will be available at `http://localhost:8000/api`.  
+Interactive API docs are available at `http://localhost:8000/docs`.
+
+Run backend unit & integration tests:
+```bash
+pytest
+```
+
+---
+
+### 3. Frontend Setup (React + Vite)
+
+Navigate to the `movie-ticket-booking/` directory:
 ```bash
 cd movie-ticket-booking
+```
+
+Install packages and start the dev server:
+```bash
 npm install
 npm run dev
 ```
-The frontend will start at `http://localhost:5173`.
+The frontend application will start at `http://localhost:5173`.
 
----
-
-## ⚙️ Running the Backend
-
+Build frontend production bundle:
 ```bash
-cd backend
-mvn spring-boot:run
+npm run build
 ```
-Or run test suite:
-```bash
-mvn clean test
-```
-The backend REST API will run at `http://localhost:8080/api`.
-
----
-
-## 🗄️ Database Setup
-
-1. Create MySQL database:
-   ```sql
-   CREATE DATABASE movie_ticket_booking;
-   ```
-2. Configure environment variables (or rely on defaults):
-   - `DB_HOST` (default: `localhost`)
-   - `DB_PORT` (default: `3306`)
-   - `DB_NAME` (default: `movie_ticket_booking`)
-   - `DB_USERNAME` (default: `root`)
-   - `DB_PASSWORD` (default: `root`)
-3. Launching Spring Boot automatically runs Flyway migrations (`V1__initial_schema.sql`, `V2__seed_data.sql`, `V3__booking_seat_show_constraint.sql`).
 
 ---
 

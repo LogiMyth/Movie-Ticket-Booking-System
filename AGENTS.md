@@ -2,12 +2,11 @@
 
 ## System Environment
 - **OS**: Windows 11
-- **Java Version**: Java 21 / 25
-- **Maven Path**: `C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.3\plugins\maven\lib\maven3\bin\mvn.cmd`
+- **Python Version**: Python 3.11+
 - **Node.js**: Installed (`npm` available)
 - **Frontend Stack**: React 19, Vite, Tailwind CSS v4 (`@tailwindcss/vite`), React Router DOM v7
-- **Backend Stack**: Spring Boot 3.4.3, Spring Data JPA, Flyway Migration, MySQL / H2
+- **Backend Stack**: Python 3.11+, FastAPI, Uvicorn, SQLAlchemy 2.x, Alembic, Pydantic v2, PyMySQL, pytest
 
 ## Guidelines for Agents
 1. **Frontend Isolation**: Do not alter frontend styling or DSA logic in `movie-ticket-booking/`. Run `npm run build` from `movie-ticket-booking/` to verify.
-2. **Backend Execution**: Run `mvn clean test` from `backend/` using the specified Maven executable path.
+2. **Backend Execution**: Run `pytest` from `backend/` to verify backend functionality.

@@ -1,30 +1,25 @@
 # PROJECT_STATUS.md
 
-## Current Status: PHASE 2 — CHECKPOINT 3 COMPLETE (SUBMISSION READY)
+## Current Status: PYTHON FASTAPI BACKEND MIGRATION COMPLETE & VERIFIED
 
 ### Completed Work Summary
 
 1. **Phase 1: React 19 Frontend & DSA Engine** (Complete & Verified):
-   - Fully built React 19 + Vite + Tailwind CSS v4 frontend.
+   - Fully built React 19 + Vite + Tailwind CSS v4 frontend (`movie-ticket-booking/`).
    - Converted 5 Google Stitch design screens: Home, Movie Details, Seat Selection, Booking Queue, Confirmation.
    - **2D Seat Matrix ($10 \times 14$)**: Real-time state toggling & sliding window consecutive seat assignment algorithm.
    - **Linked-List FIFO Queue**: Node-based $O(1)$ request queue processing engine.
 
-2. **Phase 2 Checkpoint 1: Backend Foundation & Database Schema** (Complete & Verified):
-   - Spring Boot 3.4.3 Maven project structure in `backend/`.
-   - MySQL database schema managed via Flyway migrations (`V1__initial_schema.sql`, `V2__seed_data.sql`).
-   - Core entities: `User`, `Movie`, `Theater`, `Screen`, `Seat`, `Show`, `Booking`, `BookingSeat`.
+2. **Phase 2: Python FastAPI Backend Migration** (Complete & Verified):
+   - **Complete Java Removal**: Removed Java source files, Spring Boot configuration, `pom.xml`, and Maven dependencies.
+   - **FastAPI Core Architecture**: Built modular FastAPI backend in `backend/app/` using `main.py`, `database.py`, `models/`, `schemas/`, `services/`, and `routers/`.
+   - **SQLAlchemy 2.x & Alembic**: Database models matching MySQL schema and Alembic migration `001_initial_schema_and_seed.py`.
+   - **Pydantic v2 DTOs**: CamelCase serialization matching frontend REST API specifications.
+   - **Show-Specific Seat Constraint**: Preserved `booking_seats.show_id` with composite constraint `UNIQUE(show_id, seat_id)` to prevent double bookings.
+   - **Complete API Compatibility**: Implemented `/api/health`, `/api/movies`, `/api/movies/{id}`, `/api/movies/{id}/shows`, `/api/shows/{id}`, `/api/shows/{id}/seats`, `POST /api/bookings`, `/api/bookings/{id}`, `/api/bookings/reference/{reference}`.
+   - **Frontend Integration**: Updated `BookingContext.jsx` to consume `http://localhost:8000/api` via `VITE_API_BASE_URL`.
 
-3. **Phase 2 Checkpoint 2: REST APIs & Transactional Booking Engine** (Complete & Verified):
-   - **Schema Migration (`V3__booking_seat_show_constraint.sql`)**: Enforces composite `UNIQUE(show_id, seat_id)` constraint to prevent double-booking at DB level.
-   - **REST API Suite**: Exposed `/api/movies`, `/api/movies/{id}/shows`, `/api/shows/{id}/seats`, `POST /api/bookings`.
-   - **Atomic Transactional Booking**: `@Transactional` execution with automatic rollback on collision or invalid seat requests.
-   - **Show-Specific Availability**: Seat A1 booked for Show 1 remains available for Show 2.
-   - **Frontend REST Integration**: Integrated `BookingContext.jsx` with Spring Boot REST endpoints with graceful offline fallback.
-
-4. **Phase 2 Checkpoint 3: Final Polish & Delivery Preparation** (Complete & Verified):
-   - Verified SQL assignment scripts in `docs/sql/` (`01_join_queries.sql`, `02_groupby_having_queries.sql`, `03_subquery_queries.sql`).
-   - Verified Mermaid ER Diagram in `docs/ER-DIAGRAM.md` matching Flyway V3 schema.
-   - Verified DSA analysis in `docs/DSA-Writeup.md` and REST API spec in `docs/API.md`.
-   - Authored root `README.md` with complete setup, build, test, and running instructions.
-   - All tests passing 100% and frontend build succeeding cleanly.
+3. **Verification & Delivery Status**:
+   - **Backend Tests**: 100% passing pytest test suite (`pytest` in `backend/`).
+   - **Frontend Build**: 100% passing Vite production build (`npm run build` in `movie-ticket-booking/`).
+   - **Documentation**: Updated `README.md`, `AGENTS.md`, `docs/API.md`, `docs/DSA-Writeup.md`, and `docs/ER-DIAGRAM.md`.

@@ -1,13 +1,13 @@
 # CinéPulse Movie Ticket Booking System — REST API Specification
 
 ## Base URL
-`http://localhost:8080/api`
+`http://localhost:8000/api`
 
 ---
 
 ## Architecture Note
-- **Frontend 2D Seat Matrix & FIFO Queue**: Interactive UI and Data Structures & Algorithms (DSA) demonstration.
-- **Backend Spring Boot & MySQL Database**: Authoritative source of truth for seat availability and transactional booking execution.
+- **Frontend 2D Seat Matrix & FIFO Queue**: Interactive UI and Data Structures & Algorithms (DSA) demonstration in React.
+- **Backend Python FastAPI & MySQL Database**: Authoritative source of truth for seat availability and transactional booking execution using SQLAlchemy.
 
 ---
 
@@ -57,7 +57,7 @@ Returns physical seats for the screen hosting the show, with `available` calcula
 ---
 
 ### 2. POST `/api/bookings`
-Executes an atomic `@Transactional` booking.
+Executes an atomic transactional booking.
 
 #### Example Request:
 ```json
@@ -88,8 +88,6 @@ Executes an atomic `@Transactional` booking.
 #### Double-Booking / Conflict Response (`409 Conflict`):
 ```json
 {
-  "error": "SEAT_ALREADY_BOOKED",
-  "message": "Seat A1 is already booked for this show.",
-  "timestamp": "2026-09-09T02:30:05"
+  "detail": "Seat A1 is already booked for this show."
 }
 ```

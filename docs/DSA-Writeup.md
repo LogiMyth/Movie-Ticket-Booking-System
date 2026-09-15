@@ -12,7 +12,7 @@ The system combines:
 
 ---
 
-## 1. Data Structure 1: 2D Array / Matrix (Cinema Seat Allocation)
+## 1. 2D Array / Matrix (Cinema Seat Allocation)
 
 ### Why 2D Matrix is Suitable
 A cinema auditorium is physically arranged in rows and columns. A 2D Matrix (Array of Arrays) maps 1-to-1 to physical theatre seats, providing intuitive spatial visualization and instant indexed access.
@@ -33,7 +33,7 @@ A cinema auditorium is physically arranged in rows and columns. A 2D Matrix (Arr
 
 ---
 
-## 2. Data Structure 2: FIFO Queue (Booking Request Processing)
+## 2. FIFO Queue (Booking Request Processing)
 
 ### Why Queue is Suitable
 When multiple users attempt to reserve seats concurrently, a First-In-First-Out (FIFO) queue guarantees fair order of request processing without race conditions or starvation.
